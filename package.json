@@ -1,0 +1,44 @@
+{
+	"name": "barstool-boxscore-challenge",
+	"version": "1.0.0",
+	"description": "Barstool Sports Boxscore Challenge",
+	"main": "index.js",
+	"scripts": {
+		"dev": "NODE_ENV=development npm-run-all -p watch startServer",
+		"startServer": "nodemon ./dist/server/server.js",
+		"watch": "NODE_ENV=development webpack",
+		"build": "NODE_ENV=production webpack",
+		"start": "npm-run-all -s build startServer"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/mikelly999/barstool-boxscore-challenge.git"
+	},
+	"author": "",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/mikelly999/barstool-boxscore-challenge/issues"
+	},
+	"homepage": "https://github.com/mikelly999/barstool-boxscore-challenge#readme",
+	"devDependencies": {
+		"@babel/core": "^7.17.5",
+		"@babel/node": "^7.16.8",
+		"@babel/plugin-transform-runtime": "^7.17.0",
+		"@babel/preset-env": "^7.16.11",
+		"@babel/preset-react": "^7.16.7",
+		"babel-loader": "^8.2.3",
+		"nodemon": "^2.0.15",
+		"npm-run-all": "^4.1.5",
+		"sass": "^1.49.9",
+		"sass-loader": "^12.6.0",
+		"webpack": "^5.69.1",
+		"webpack-cli": "^4.9.2"
+	},
+	"dependencies": {
+		"express": "^4.17.3",
+		"node-fetch": "^3.2.0",
+		"react": "^17.0.2",
+		"react-dom": "^17.0.2",
+		"react-icons": "^4.3.1"
+	}
+}

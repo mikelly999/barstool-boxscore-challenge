@@ -1,0 +1,157 @@
+* {
+	box-sizing: border-box;
+}
+
+:root {
+	--red: #c62231;
+	--blue: #141e30;
+	--dark-gray: #707070;
+	--light-gray: #dedede;
+	--primary-font: "Bebas Neue", cursive;
+	--secondary-font: "Montserrat", sans-serif;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+	font-family: var(--primary-font);
+}
+
+nav {
+	padding: 0.5rem;
+	box-shadow: 0 0.5rem 1rem -0.5rem rgba(0, 0, 0, 0.5);
+	margin: 0 0 2rem 0;
+}
+
+nav img {
+	max-width: 10rem;
+	margin: 0 auto;
+	display: block;
+}
+
+#container {
+	width: 100%;
+	max-width: 900px;
+	margin: 0 auto;
+	padding: 0 1rem;
+}
+
+#toggles {
+	display: flex;
+	justify-content: center;
+}
+
+#toggles .toggle {
+	border-radius: 0.25rem;
+	padding: 1rem;
+}
+#toggles .toggle.active {
+	border-radius: 0.25rem 0.25rem 0 0;
+	border-bottom-color: #ffffff;
+	padding: 1rem;
+}
+
+.boxscore {
+	margin: 0 0 2rem 0;
+	font-family: var(--secondary-font);
+	font-weight: 400;
+}
+.boxscore .teams .away .score {
+	margin: 0 0 0 1rem;
+}
+.boxscore .teams .home .score {
+	margin: 0 1rem 0 0;
+}
+.boxscore > div {
+	display: flex;
+}
+.boxscore .teams {
+	display: flex;
+}
+.boxscore .teams p {
+	margin: 0;
+	line-height: 0.95;
+}
+.boxscore .teams span {
+	color: var(--dark-gray);
+	font-size: 1rem;
+	font-weight: 400;
+}
+.boxscore .teams > div:nth-child(2) {
+	text-align: right;
+}
+.boxscore .teams > div {
+	width: 50%;
+	padding: 0.5rem;
+	font-weight: bold;
+	font-size: 1.5rem;
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-end;
+	font-family: var(--primary-font);
+	border: 0;
+}
+.boxscore .teams .win {
+	border-bottom: 2px solid var(--blue);
+	color: var(--blue);
+}
+.boxscore .teams .loss {
+	border-bottom: 2px solid var(--red);
+	color: var(--red);
+}
+.boxscore .teams .score {
+	font-size: 2rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-wrap: wrap;
+}
+.boxscore .teams .score svg {
+	width: 100%;
+	font-size: 1rem;
+}
+.boxscore .periods {
+	border-left: 1px solid var(--light-gray);
+	color: var(--dark-gray);
+}
+.boxscore .periods > div {
+	text-align: center;
+}
+.boxscore .teams .win .score {
+	position: relative;
+}
+.boxscore.nba .periods > div {
+	width: calc((100% - 4rem) / 5);
+}
+.boxscore.nba .periods > div:nth-child(1),
+.boxscore.mlb .periods > div:nth-child(1) {
+	width: 4rem;
+}
+.boxscore.nba .periods > div:nth-child(1),
+.boxscore.nba .periods > div:last-child {
+	font-weight: bold;
+	color: #000000;
+}
+.boxscore .periods > div > div {
+	padding: 0.5rem 0.25rem;
+	border-bottom: 1px solid var(--light-gray);
+}
+.boxscore .periods > div {
+	border-right: 1px solid var(--light-gray);
+}
+.boxscore.nba .periods > div > div:nth-child(1) {
+	border-top: 0;
+}
+.boxscore.mlb .periods > div {
+	width: calc((100% - 4rem) / 12);
+}
+.boxscore.mlb .periods > div:nth-child(1) {
+	font-weight: bold;
+	color: #000000;
+}
+.boxscore.mlb .periods > div:nth-child(1),
+.boxscore.mlb .periods > div:nth-last-child(-n + 3) {
+	font-weight: bold;
+	color: #000000;
+}
