@@ -152,7 +152,7 @@ const PitcherStats = (props) => {
 				<tbody>
 					{stats.map((s, i) => {
 						return (
-							<tr key={`s_${i}`}>
+							<tr key={`p_${i}`}>
 								<td>{s.last_name}</td>
 								<td>{s.innings_pitched}</td>
 								<td>{s.hits_allowed}</td>
