@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Nav from "./components/Nav";
 import { NBABoxscore, MLBBoxscore } from "./components/Boxscore";
+import { PulseLoader } from "react-spinners";
 
 const boxscoreConfig = {
 	NBA: (props) => <NBABoxscore {...props} />,
@@ -22,11 +23,17 @@ const App = () => {
 		<div id="app">
 			<Nav />
 			<div id="container">
-				{data &&
-					data.map((gameData) => {
+				{data ? (
+					data.map((gameData, i) => {
 						const Boxscore = boxscoreConfig[gameData.league];
-						return <Boxscore {...gameData} />;
-					})}
+						return <Boxscore key={`boxscore_${i}`} {...gameData} />;
+					})
+				) : (
+					<div id="loader">
+						<p>LOADING</p>
+						<PulseLoader color="#141e30" />
+					</div>
+				)}
 			</div>
 		</div>
 	);

@@ -1,27 +1,43 @@
-// const { MongoClient, ServerApiVersion } = require("mongodb");
-// const uri =
-// 	"mongodb+srv://mikelly9:<password>@cluster0.cdizm.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
-// const client = new MongoClient(uri, {
-// 	useNewUrlParser: true,
-// 	useUnifiedTopology: true,
-// 	serverApi: ServerApiVersion.v1,
-// });
-// client.connect((err) => {
-// 	const collection = client.db("test").collection("devices");
-// 	// perform actions on the collection object
-// 	client.close();
-// });
 import { MongoClient, ServerApiVersion } from "mongodb";
 
-const uri =
-	"mongodb+srv://mikelly9:<password>@cluster0.cdizm.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
+const uri = `mongodb+srv://mikelly9:${process.env.dbPassword}@cluster0.cdizm.mongodb.net/Cluster0?retryWrites=true&w=majority`;
 
 const client = new MongoClient(uri, {
-	useNewUrlParser: true,
+	useNewUrlParser: false,
 	useUnifiedTopology: true,
 	serverApi: ServerApiVersion.v1,
 });
 
-client.connect((err) => {
-	const collection = client.db("test").collection("devices");
-});
+const getDbData = async () => {
+	await client.connect();
+	const collection = await client
+		.db("barstool")
+		.collection("feeds")
+		.find()
+		.toArray();
+	await client.close();
+	return collection;
+};
+
+const updateDbData = async (documents) => {
+	await client.connect();
+	const upsert = await client
+		.db("barstool")
+		.collection("feeds")
+		.bulkWrite(
+			documents.map((d) => {
+				return {
+					updateOne: {
+						filter: { _id: d._id },
+						update: { $set: d },
+						upsert: true,
+					},
+				};
+			})
+		);
+	console.log("upsert", upsert);
+	await client.close();
+	return upsert;
+};
+
+export { getDbData, updateDbData };

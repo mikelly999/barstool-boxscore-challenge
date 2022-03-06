@@ -1,0 +1,15 @@
+$red: #c62231;
+$blue: #141e30;
+$darkGray: #707070;
+$gray: #dedede;
+$lightGray: #f3f3f3;
+$white: #ffffff;
+$black: #000000;
+$primaryFont: "Bebas Neue", cursive;
+$secondaryFont: "Montserrat", sans-serif;
+$buttonShadow: 0 4px 4px -2px rgba(0, 0, 0, 0.5);
+$breakpoints: (
+	"small": 500px,
+	"medium": 750px,
+	"large": 900px,
+) !default;

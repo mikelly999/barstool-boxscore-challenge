@@ -7,6 +7,7 @@
 	--blue: #141e30;
 	--dark-gray: #707070;
 	--light-gray: #dedede;
+	--lighter-gray: #f3f3f3;
 	--primary-font: "Bebas Neue", cursive;
 	--secondary-font: "Montserrat", sans-serif;
 }
@@ -36,7 +37,20 @@ nav img {
 	margin: 0 auto;
 	padding: 0 1rem;
 }
-
+#loader {
+	width: 100%;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
+	padding: 5rem 1rem;
+}
+#loader p {
+	width: 100%;
+	text-align: center;
+	color: var(--blue);
+	font-size: 1.25rem;
+}
 #toggles {
 	display: flex;
 	justify-content: center;
@@ -131,27 +145,34 @@ nav img {
 .boxscore.nba .periods > div:nth-child(1),
 .boxscore.nba .periods > div:last-child {
 	font-weight: bold;
-	color: #000000;
+	background-color: var(--lighter-gray);
+	/* color: #000000; */
 }
 .boxscore .periods > div > div {
 	padding: 0.5rem 0.25rem;
 	border-bottom: 1px solid var(--light-gray);
 }
+.dark {
+	color: black;
+	font-weight: bold;
+}
 .boxscore .periods > div {
 	border-right: 1px solid var(--light-gray);
 }
-.boxscore.nba .periods > div > div:nth-child(1) {
+.boxscore .periods > div > div:nth-child(1) {
 	border-top: 0;
+	/* font-weight: bold; */
 }
 .boxscore.mlb .periods > div {
 	width: calc((100% - 4rem) / 12);
 }
 .boxscore.mlb .periods > div:nth-child(1) {
 	font-weight: bold;
-	color: #000000;
+	/* color: #000000; */
 }
 .boxscore.mlb .periods > div:nth-child(1),
 .boxscore.mlb .periods > div:nth-last-child(-n + 3) {
 	font-weight: bold;
-	color: #000000;
+	background-color: var(--lighter-gray);
+	/* color: #000000; */
 }
