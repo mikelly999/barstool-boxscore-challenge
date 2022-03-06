@@ -1,6 +1,6 @@
 import { MongoClient, ServerApiVersion } from "mongodb";
 
-const uri = `mongodb+srv://mikelly9:${process.env.dbPassword}@cluster0.cdizm.mongodb.net/Cluster0?retryWrites=true&w=majority`;
+const uri = `mongodb+srv://mikelly9:${process.env.DB_PASSWORD}@cluster0.cdizm.mongodb.net/Cluster0?retryWrites=true&w=majority`;
 
 const client = new MongoClient(uri, {
 	useNewUrlParser: false,
