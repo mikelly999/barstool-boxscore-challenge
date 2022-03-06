@@ -15,7 +15,6 @@ const getDbData = async () => {
 		.collection("feeds")
 		.find()
 		.toArray();
-	await client.close();
 	return collection;
 };
 
@@ -35,8 +34,6 @@ const updateDbData = async (documents) => {
 				};
 			})
 		);
-	console.log("upsert", upsert);
-	await client.close();
 	return upsert;
 };
 
