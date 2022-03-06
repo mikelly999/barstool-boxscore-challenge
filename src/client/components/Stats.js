@@ -183,7 +183,7 @@ const MLBStats = (props) => {
 	} = props;
 	return (
 		<div className="mlbStats">
-			<div>
+			{/* <div>
 				<h3>{away_team.full_name}</h3>
 				<BatterStats stats={away_batters} />
 				<PitcherStats stats={away_pitchers} />
@@ -192,6 +192,24 @@ const MLBStats = (props) => {
 				<h3>{home_team.full_name}</h3>
 				<BatterStats stats={home_batters} />
 				<PitcherStats stats={home_pitchers} />
+			</div> */}
+			<div>
+				<div>
+					<h3>{away_team.full_name}</h3>
+					<BatterStats stats={away_batters} />
+				</div>
+				<div>
+					<h3>{home_team.full_name}</h3>
+					<BatterStats stats={home_batters} />
+				</div>
+			</div>
+			<div>
+				<div>
+					<PitcherStats stats={away_pitchers} />
+				</div>
+				<div>
+					<PitcherStats stats={home_pitchers} />
+				</div>
 			</div>
 		</div>
 	);
