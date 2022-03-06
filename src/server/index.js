@@ -39,7 +39,6 @@ app.get("/api/getData", async (req, res) => {
 	const needsFetch = dbData
 		.filter((d) => Date.now() - d._updatedAt > 15000)
 		.map((d) => d._id);
-	console.log("NEEDS FETCH", needsFetch.length);
 	if (!needsFetch.length) {
 		return res.end(JSON.stringify(dbData));
 	}
