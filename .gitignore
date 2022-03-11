@@ -105,3 +105,4 @@ dist
 
 # bundled react app
 public/dist
+api/
