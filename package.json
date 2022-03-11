@@ -7,8 +7,7 @@
 		"startServer": "nodemon ./dist/server/server.js",
 		"watch": "NODE_ENV=development webpack",
 		"build": "NODE_ENV=production webpack",
-		"start": "npm-run-all -s build startServer",
-		"postinstall": "npm run build"
+		"start": "npm-run-all -s build startServer"
 	},
 	"repository": {
 		"type": "git",
