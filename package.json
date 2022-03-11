@@ -3,11 +3,12 @@
 	"version": "1.0.0",
 	"description": "Barstool Sports Boxscore Challenge",
 	"scripts": {
-		"dev": "NODE_ENV=development npm run build && npm-run-all -p watch startServer",
+		"dev": "NODE_ENV=development npm-run-all -p watch startServer",
 		"startServer": "nodemon ./dist/server/server.js",
 		"watch": "NODE_ENV=development webpack",
 		"build": "NODE_ENV=production webpack",
-		"start": "npm-run-all -s build startServer"
+		"start": "npm-run-all -s build startServer",
+		"postinstall": "npm run build"
 	},
 	"repository": {
 		"type": "git",
