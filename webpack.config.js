@@ -7,7 +7,7 @@ const serverConfig = {
 	watch: process.env.NODE_ENV === "development",
 	output: {
 		filename: "server.js",
-		path: path.resolve(__dirname, "dist", "server"),
+		path: path.resolve(__dirname, "api"),
 	},
 };
 
