@@ -2,7 +2,7 @@
 	"name": "barstool-boxscore-challenge",
 	"version": "1.0.0",
 	"description": "Barstool Sports Boxscore Challenge",
-	"main": "./src/index.js",
+	"main": "./dist/server.js",
 	"scripts": {
 		"dev": "NODE_ENV=development npm-run-all -p watch startServer",
 		"startServer": "nodemon ./dist/server/server.js",
