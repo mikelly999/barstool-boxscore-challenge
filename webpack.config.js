@@ -6,8 +6,8 @@ const serverConfig = {
 	entry: path.join(__dirname, "src", "server"),
 	watch: process.env.NODE_ENV === "development",
 	output: {
-		filename: "server.js",
-		path: path.resolve(__dirname, "dist", "server"),
+		filename: "index.js",
+		path: path.resolve(__dirname, "api"),
 	},
 };
 
