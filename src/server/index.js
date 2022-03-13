@@ -93,7 +93,14 @@ const HTMLDocument = (props) => {
 
 app.get("/", async (req, res) => {
 	if (process.env.SSR) {
-		const response = await fetch("http://localhost:3000/api/getData");
+		const { hostname } = req;
+		const host =
+			process.env.NODE_ENV === "development"
+				? "localhost:3000"
+				: hostname;
+		const protocol =
+			process.env.NODE_ENV === "development" ? "http" : "https";
+		const response = await fetch(`${protocol}://${host}/api/getData`);
 		const data = await response.json();
 		const html = ReactDOMServer.renderToString(
 			<HTMLDocument data={data} />
